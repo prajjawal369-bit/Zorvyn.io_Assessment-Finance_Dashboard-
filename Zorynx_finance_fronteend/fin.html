@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Finance Dashboard Pro</title>
+    <link rel="stylesheet" href="fin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <div class="dash">
+        <main class="main-content">
+            <header class="header">
+                <div class="brand">
+                    <i class="ph-fill ph-chart-pie-slice"></i>
+                    <h2>Finance<span>Master</span></h2>
+                </div>
+                <div class="header-right">
+
+                    <button class="theme-btn" onclick="toggleModes()">
+                        <i id="themech" class="ph ph-moon"></i>
+                    </button>
+                    <div class="role-switcher">
+                        <label>Switch Role:</label>
+                        <select id="roleSelect" onchange="checkRole()">
+                            <option value="Admin">Admin (Full Access)</option>
+                            <option value="Viewer">Viewer (Read Only)</option>
+                        </select>
+                    </div>
+                    <button class="btn1" onclick="toggle()">
+                        <i class="ph ph-sparkle"></i> Trends
+                    </button>
+                </div>
+            </header>
+
+            <div class="container1">
+                <div class="stat-card">
+                    <p>Total Balance</p>
+                    <h1 id="balanceDisplay">$0.00</h1>
+                </div>
+                <div class="stat-card income">
+                    <p>Deposits</p>
+                    <h2 id="depositDisplay">$0.00</h2>
+                </div>
+                <div class="stat-card expense">
+                    <p>Withdrawals</p>
+                    <h2 id="withdrawDisplay">$0.00</h2>
+                </div>
+            </div>
+
+            <section id="adminActions" class="action-panel">
+                <h3>Admin Controls</h3>
+                <div class="input-row">
+                    <input type="number" id="amountInput" placeholder="Enter Amount">
+                    <button onclick="doAction('Deposit')" class="btn-primary">Deposit</button>
+                    <button onclick="doAction('Withdraw')" class="btn-secondary">Withdraw</button>
+                </div>
+            </section>
+
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>Recent Activity</h3>
+                    <button class="export-btn" onclick="exportData()">Export Data</button>
+                </div>
+                <table id="transactionTable">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Performed By</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+            </div>
+        </main>
+
+        <aside id="Slidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>AI Market Trends</h3>
+                <i class="ph ph-x" onclick="toggle()"></i>
+            </div>
+            <div id="content" class="ai-list"></div>
+        </aside>
+    </div>
+    <script src="fin.js"></script>
+</body>
+
+</html>

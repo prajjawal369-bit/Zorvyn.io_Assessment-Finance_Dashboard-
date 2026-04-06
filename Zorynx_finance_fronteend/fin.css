@@ -1,0 +1,264 @@
+
+:root {
+    --primary: #4f46e5;
+    --success: #10b981;
+    --danger: #f43f5e;
+    --text: #111827;
+    --bg: #dfd6d6;
+}
+
+
+body.dark-mode {
+    --bg: #0f172a;       
+    --text: #f8fafc;     
+    --card-bg: #1e293b;  
+    --border: #334155;
+}
+
+
+body { 
+    transition: background 0.3s, color 0.3s; /* Smooth transition ke liye */
+}
+
+body.dark-mode .stat-card, 
+body.dark-mode .action-panel, 
+body.dark-mode .table-card {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+body.dark-mode th {
+    background: #1e293b;
+    color: #94a3b8;
+}
+
+body.dark-mode td {
+    border-bottom: 1px solid var(--border);
+}
+
+.theme-btn {
+    background: #e2e8f0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+body.dark-mode .theme-btn {
+    background: #334155;
+    color: #fbbf24; /* Sun icon color */
+}
+
+
+body { 
+    margin: 0; 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg); 
+    color: var(--text); 
+}
+
+
+.dash { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+.main-content { 
+    flex: 1; 
+    padding: 2rem; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+/* 4. Header Section */
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 2rem; 
+}
+
+.brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 1.2rem; 
+}
+
+.brand i { 
+    color: var(--primary); 
+    font-size: 2rem; 
+}
+
+ .header-right { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+} 
+
+/* 5. Role Switcher Dropdown */
+.role-switcher select { 
+    padding: 8px; 
+    border-radius: 8px; 
+    border: 1px solid #d1d5db; 
+    font-weight: 600; 
+    cursor: pointer;
+}
+
+/* 6. Stats Cards (Grid Layout) */
+.container1 { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    margin-bottom: 2rem; 
+}
+
+.stat-card { 
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 16px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+}
+
+.stat-card  { 
+    cursor: pointer;
+   
+    transition: transform 0.3s ease-in-out; 
+} 
+
+.stat-card:hover { 
+    transform: scale(1.05); 
+    background-color: #7437f7;
+    
+}
+    
+
+.stat-card.income, 
+.stat-card.expense { 
+    cursor: pointer;
+   
+    transition: transform 0.3s ease-in-out; 
+}
+
+
+.stat-card.income:hover,
+.stat-card.expense:hover {
+    transform: scale(1.05); 
+    background-color: #4c81eb;
+    
+}
+
+.income h2 { 
+    color: var(--success); 
+}
+
+.expense h2 { 
+    color: var(--danger); 
+}
+
+/* 7. Action Panel (Admin Controls) */
+.action-panel { 
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 16px; 
+    margin-bottom: 2rem; 
+    border: 1px solid #e5e7eb; 
+}
+
+.input-row { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 10px; 
+}
+
+input { 
+    flex: 1; 
+    padding: 12px; 
+    border: 1px solid #d1d5db; 
+    border-radius: 8px; 
+    font-size: 1rem; 
+}
+
+/* Buttons */
+button { 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: 0.2s ease; 
+}
+
+.btn-primary { 
+    background: var(--success); 
+    color: white; 
+}
+
+.btn-secondary { 
+    background: var(--danger); 
+    color: white; 
+}
+
+/* 8. Professional Table Styling */
+.table-card { 
+    background: white; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+}
+
+.table-header { 
+    padding: 1.5rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid #f3f4f6; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+th { 
+    background: #f9fafb; 
+    padding: 15px; 
+    text-align: left; 
+    font-size: 0.8rem; 
+    color: #6b7280; 
+    text-transform: uppercase; 
+}
+
+td { 
+    padding: 15px; 
+    border-bottom: 1px solid #f3f4f6; 
+    font-size: 0.95rem; 
+}
+
+.badge { 
+    padding: 4px 8px; 
+    border-radius: 6px; 
+    font-size: 0.75rem; 
+    font-weight: bold; 
+    background: #e5e7eb; 
+}
+
+/* 9. Sliding Sidebar (AI Insights) */
+.sidebar { 
+    position: fixed; 
+    right: -400px; 
+    top: 0; 
+    width: 320px; 
+    height: 100%; 
+    background: #111827; 
+    color: white; 
+    transition: 0.4s ease; 
+    padding: 20px; 
+    z-index: 100; 
+}
+
+.sidebar.active { 
+    right: 0; 
+}
